@@ -29,3 +29,14 @@ exports.addProjectController = async(req,res)=>{
         res.status(401).json(`Project adding failed due to ${error}`)
     }
 }
+
+
+// get all projects
+exports.getAllProjects = async(req , res)=>{
+    try {
+        const allProject = await projects.find()
+        res.status(200).json(allProject)
+    } catch (error) {
+        res.status(401).json(error)
+    }
+}
