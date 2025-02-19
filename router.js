@@ -17,5 +17,14 @@ router.post('/add-project',multerConfig.single("projectImage"),projectController
 // get all projects
 router.get('/all-project',projectController.getAllProjects)
 
+// get admin projects
+router.get('/admin-project',projectController.getAdminProjectController)
+
+// remove admin project
+router.delete('/remove-adminproject/:id',projectController.deleteAdminProjectController)
+
+// update admin project
+router.put('/update-adminProject/:id',multerConfig.single("projectImage"),projectController.updateAdminProjectCotroller)
+
 
 module.exports = router
